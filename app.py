@@ -16,6 +16,7 @@ async def upload_video():
 
         req_data = request.get_json()
 
+        img_number = req_data['imgNumber'][0]
         store_file_name = req_data['name'][0]
 
         s3 = s3_connection()
@@ -23,7 +24,7 @@ async def upload_video():
 
         print("store_file_name : ", store_file_name)
 
-        source_img = './assets/woman.jpg'
+        source_img = './assets/'+img_number+'.png'
         result_video_path = './result/' + store_file_name
         deepfake.transfer_video(source_img, file_path, result_video_path)
 

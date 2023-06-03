@@ -159,14 +159,14 @@ class DeepFake:
 
         inpainting, kp_detector, dense_motion_network, avd_network = self.inpainting, self.kp_detector, self.dense_motion_network,self.avd_network
 
-        # i = self.find_best_frame(source_image, driving_video, device)
+        # i = self.find_best_frame(source_image, driving_video, self.device)
         # print("Best frame: " + str(i))
-        # driving_forward = driving_video[i:]
-        # driving_backward = driving_video[:(i + 1)][::-1]
+        # driving_forward = driving_video[503:]
+        # driving_backward = driving_video[:(503 + 1)][::-1]
         # predictions_forward = self.make_animation(source_image, driving_forward, inpainting, kp_detector,
-        #                                      dense_motion_network, avd_network, device=device, mode=opt.mode)
+        #                                      dense_motion_network, avd_network, device=self.device, mode='relative')
         # predictions_backward = self.make_animation(source_image, driving_backward, inpainting, kp_detector,
-        #                                       dense_motion_network, avd_network, device=device, mode=opt.mode)
+        #                                       dense_motion_network, avd_network, device=self.device, mode='relative')
         # predictions = predictions_backward[::-1] + predictions_forward[1:]
 
         predictions = self.make_animation(source_image, driving_video, inpainting, kp_detector, dense_motion_network,
