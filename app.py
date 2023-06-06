@@ -9,6 +9,11 @@ import boto3
 
 
 app = Flask(__name__)
+
+@app.route('/',methods=['GET'])
+def test():
+    return "hello flask"
+
 @app.route('/boards/video',methods=['POST'])
 async def upload_video():
 
@@ -52,5 +57,5 @@ def s3_download_temp_file(store_file_name,s3):
 
 if __name__ == '__main__':
     deepfake = DeepFake()
-    app.run()
+    app.run(port=5000,host="0.0.0.0")
 

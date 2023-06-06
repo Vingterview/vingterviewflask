@@ -29,6 +29,7 @@ class DeepFake:
         self.inpainting, self.kp_detector, self.dense_motion_network,self.avd_network = self.load_checkpoints(config_path='config/vox-256.yaml',
                                                                                                           checkpoint_path='checkpoints/vox.pth.tar',
                                                                                                           device=self.device)
+        print(self.device)
 
 
 
