@@ -1,2 +1,2 @@
 # vingterviewflask
-vingterview flask server
+빙터뷰 DeepFake Flask Server 
